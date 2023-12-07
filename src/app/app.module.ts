@@ -16,11 +16,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'welcome',
+    path: ' ',
     component: HomeComponent,
   },
   {
-    path: ' ',
+    path: 'movies',
     component: MoviesComponent,
     canActivate: [AuthGuard]
   },

@@ -36,7 +36,6 @@ export class AuthService {
   stayIn(){
     const user = localStorage.getItem('user')
     if (!user) {
-      this.router.navigate(['/login']);
       return;
     } 
     const newUser = JSON.parse(user);
@@ -58,7 +57,7 @@ export class AuthService {
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/ ']);
   }
 
 
