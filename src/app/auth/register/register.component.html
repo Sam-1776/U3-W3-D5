@@ -1,0 +1,64 @@
+<div class="container mt-3 d-flex flex-column align-items-center">
+  <h1 class="text-center display-5">Register</h1>
+  <div class="row justify-content-center align-items-center border border-dark rounded mt-3">
+    <div class="col-6">
+      <form [formGroup]="form">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              class="form-control"
+              formControlName="nome"
+            />
+            <span
+              *ngIf="
+                getFormC('nome')?.invalid &&
+                getFormC('nome')?.touched
+              "
+              ><ng-container *ngIf="geterrorsC('nome', 'required')"
+                >Campo obbligatorio</ng-container
+              ></span
+            >
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+            />
+            <span
+              *ngIf="
+                getFormC('email')?.invalid &&
+                getFormC('email')?.touched
+              "
+              ><ng-container *ngIf="geterrorsC('email', 'required')"
+                >Campo obbligatorio</ng-container
+              ></span
+            >
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+            />
+            <span
+              *ngIf="
+                getFormC('password')?.invalid &&
+                getFormC('password')?.touched
+              "
+              ><ng-container *ngIf="geterrorsC('password', 'required')"
+                >Campo obbligatorio</ng-container
+              ></span
+            >
+          </div>
+        <button type="submit" class="btn btn-outline-dark mt-2" [disabled]="form.invalid" (click)="signUp()">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>
