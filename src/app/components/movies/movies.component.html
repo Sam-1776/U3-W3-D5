@@ -1,0 +1,13 @@
+<div class="container mt-3">
+    <h1 class="display-5">Film popolari</h1>
+    <div class="row g-3 mt-3">
+        <div class="col-3" *ngFor="let film of films; let i = index">
+            <div class="card text-bg-dark ">
+                <img src='http://image.tmdb.org/t/p/w500{{film.poster_path}}' class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <a class="card-text text-light"><i class="bi bi-heart-fill"></i></a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

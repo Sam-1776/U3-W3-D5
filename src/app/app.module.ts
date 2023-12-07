@@ -11,11 +11,22 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {
-    path: ' ',
+    path: 'welcome',
     component: HomeComponent,
+  },
+  {
+    path: ' ',
+    component: MoviesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -33,7 +44,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent],
   imports: [
     BrowserModule,
     FormsModule,

@@ -27,7 +27,7 @@ export class AuthService {
         this.user = log;
         console.log(this.user);
         localStorage.setItem('user', JSON.stringify(log))
-        this.router.navigate(['/'])
+        this.router.navigate(['/movies'])
       }),
       catchError(this.errors)
     )
@@ -58,7 +58,7 @@ export class AuthService {
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/welcome']);
   }
 
 
