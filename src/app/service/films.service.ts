@@ -17,7 +17,17 @@ export class FilmsService {
     return this.http.get<Film[]>(`${this.url}movies-popular`)
   }
 
-  setFavorite(id: number , mI: number){
-    return this.http.post<Favorite>(`${this.url}`, {id, mI})
+  setFavorite(userId: number , movieId: number){
+    return this.http.post<Favorite>(`${this.url}favorites`, {userId, movieId})
+  }
+
+  getFavorite(userId: number){
+    return this.http.get<Favorite[]>(`${this.url}favorites?userId=${userId}`)
+  }
+
+  deliteFavorite(id: number){
+    console.log(id);
+    
+    return this.http.delete(`${this.url}favorites/${id}`)
   }
 }

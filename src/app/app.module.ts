@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'movies',
     component: MoviesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'favorite',
+    component: FavoriteComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -44,7 +50,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent, FavoriteComponent],
   imports: [
     BrowserModule,
     FormsModule,

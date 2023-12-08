@@ -1,13 +1,43 @@
 <div class="container mt-3">
-    <h1 class="display-5">Film popolari</h1>
-    <div class="row g-3 mt-3">
-        <div class="col-3" *ngFor="let film of films; let i = index">
-            <div class="card text-bg-dark ">
-                <img src='http://image.tmdb.org/t/p/w500{{film.poster_path}}' class="card-img" alt="...">
-                <div class="card-img-overlay">
-                  <a class="card-text text-light"><i class="bi bi-heart-fill"></i></a>
-                </div>
-              </div>
+  <h1 class="display-5">Film popolari</h1>
+  <div class="row g-3 mt-3">
+    <div class="card-img-overlay" *ngIf="!prefe.length; else heart">
+    <div class="col-3" *ngFor="let film of films; let i = index">
+      <div class="card text-bg-dark">
+        <img
+          src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
+          class="card-img"
+          alt="..."
+        />
+          <button
+            class="card-text btn text-light"
+            (click)="addFavorite(newUtente.user.id, film.id)"
+          >
+            <i class="bi bi-heart-fill"></i>
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<ng-template #heart>
+  <div class="col-3" *ngFor="let film of films">
+    <div class="card text-bg-dark">
+      <img
+      src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
+      class="card-img"
+      alt="..."
+      />
+      <div *ngFor="let item of prefe; let i = index" >
+      <button
+      class="card-text btn"
+      (click)="addFavorite(newUtente.user.id, film.id)"
+      [ngClass]=" {'btn-outline-danger': item.movieId == film.id, 'btn-outline-light': item.movieId != film.id}"
+        >
+          <i class="bi bi-heart-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

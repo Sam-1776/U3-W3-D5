@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <h1 class="display-5">Film Preferiti</h1>
+  <div class="row g-3 mt-3">
+    <div class="col-3" *ngFor="let film of provas; let i = index">
+      <div class="card text-bg-dark">
+        <img
+          src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
+          class="card-img"
+        />
+        <div class="card-img-overlay">
+          <button class="card-text btn btn-outline-danger" (click)="remove(film.id, i)">
+            <i class="bi bi-heartbreak-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
