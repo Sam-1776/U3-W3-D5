@@ -11,7 +11,7 @@
         />
           <button
             class="card-text btn text-light"
-            (click)="addFavorite(newUtente.user.id, film.id)"
+            (click)="addFavorite(newUtente.user.id, film.id, i)"
           >
             <i class="bi bi-heart-fill"></i>
           </button>
@@ -22,22 +22,20 @@
 </div>
 
 <ng-template #heart>
-  <div class="col-3" *ngFor="let film of films">
+  <div class="col-3" *ngFor="let film of films; let i = index">
     <div class="card text-bg-dark">
       <img
       src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
       class="card-img"
       alt="..."
       />
-      <div *ngFor="let item of prefe; let i = index" >
       <button
       class="card-text btn"
-      (click)="addFavorite(newUtente.user.id, film.id)"
-      [ngClass]=" {'btn-outline-danger': item.movieId == film.id, 'btn-outline-light': item.movieId != film.id}"
+      (click)="addFavorite(newUtente.user.id, film.id, i)"
+      [ngClass]=" {'btn-outline-danger': film.fav === true, 'btn-outline-light': film.fav === false}"
         >
           <i class="bi bi-heart-fill"></i>
         </button>
-      </div>
     </div>
   </div>
 </ng-template>

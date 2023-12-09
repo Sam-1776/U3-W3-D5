@@ -40,7 +40,7 @@ export class AuthService {
     } 
     const newUser = JSON.parse(user);
     if (this.jwt.isTokenExpired(newUser.accessToken)) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
       return;
     }
     this.authSubj.next(newUser);

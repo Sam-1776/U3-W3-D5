@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Film } from '../models/film';
+import { Fav, Film } from '../models/film';
 import { Favorite } from '../models/favorite';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class FilmsService {
   constructor(private http: HttpClient) { }
 
   getFilm(){
-    return this.http.get<Film[]>(`${this.url}movies-popular`)
+    return this.http.get<Fav[]>(`${this.url}movies-popular`)
   }
 
   setFavorite(userId: number , movieId: number){
