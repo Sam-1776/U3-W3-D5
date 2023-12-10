@@ -1,7 +1,7 @@
-<div class="container mt-3">
+<div class="container mt-3 mb-3">
   <h1 class="display-5">Film Preferiti</h1>
   <div class="row g-3 mt-3">
-    <div class="col-3" *ngFor="let film of provas; let i = index">
+    <div class="col-6 col-md-4 col-lg-3" *ngFor="let film of provas; let i = index">
       <div class="card text-bg-dark">
         <img
           src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"

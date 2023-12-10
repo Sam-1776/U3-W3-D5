@@ -1,18 +1,18 @@
 <div class="container mt-3">
-  <h2 class="display-5 f-1">Film consigliato</h2>
-  <div class="row justify-content-center">
+  <h2 class="display-5 f-1 d-sm-none d-md-block">Film consigliato</h2>
+  <div class="row justify-content-center d-sm-none d-md-flex">
     <div class="col-10">
       <div
         class="card mb-3 position-relative"
         style="max-width: 100%"
         id="tip"
-        [routerLink]="['/details/' + filmR.id]"
       >
         <div class="row g-0">
           <div class="col-md-4">
             <img
               src="http://image.tmdb.org/t/p/w500{{ filmR.poster_path }}"
               class="img-fluid rounded-start"
+              [routerLink]="['/details/' + filmR.id]"
             />
           </div>
           <div class="col-md-8">
@@ -45,15 +45,15 @@
   </div>
   <h1 class="display-5">Film popolari</h1>
   <div class="row g-3 mt-3 mb-3" *ngIf="!prefe.length; else heart">
-    <div class="col-3" *ngFor="let film of films; let i = index">
-      <div class="card text-bg-dark" [routerLink]="['/details/' + film.id]">
+    <div class="col-6 col-md-4 col-lg-3" *ngFor="let film of films; let i = index">
+      <div class="card text-bg-dark" >
         <img
           src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
           class="card-img"
-          alt="..."
+          [routerLink]="['/details/' + film.id]"
         />
         <button
-          class="card-text btn text-light"
+          class="card-text btn"
           (click)="addFavorite(newUtente.user.id, film.id, i)"
           id="btnF"
         >
@@ -65,24 +65,26 @@
 </div>
 
 <ng-template #heart>
-  <div class="col-3" *ngFor="let film of films; let i = index">
-    <div class="card text-bg-dark" [routerLink]="['/details/' + film.id]">
-      <img
-        src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
-        class="card-img"
-        alt="..."
-      />
-      <button
-        class="card-text btn"
-        (click)="addFavorite(newUtente.user.id, film.id, i)"
-        [ngClass]="{
-          'btn-outline-danger': film.fav === true,
-          'btn-outline-light': film.fav === false
-        }"
-        id="btnF"
-      >
-        <i class="bi bi-heart-fill"></i>
-      </button>
+  <div class="row g-3 mt-3 mb-3" >
+    <div class="col-6 col-md-4 col-lg-3" *ngFor="let film of films; let i = index" >
+      <div class="card text-bg-dark" >
+        <img
+          src="http://image.tmdb.org/t/p/w500{{ film.poster_path }}"
+          class="card-img"
+          [routerLink]="['/details/' + film.id]"
+        />
+        <button
+          class="card-text btn"
+          (click)="addFavorite(newUtente.user.id, film.id, i)"
+          [ngClass]="{
+            'btn-outline-danger': film.fav === true,
+            'btn-outline-light': film.fav === false
+          }"
+          id="btnF"
+        >
+          <i class="bi bi-heart-fill"></i>
+        </button>
+      </div>
     </div>
   </div>
 </ng-template>

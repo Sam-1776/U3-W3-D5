@@ -15,6 +15,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { DetailsComponent } from './components/details/details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
   {
@@ -56,7 +57,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent, FavoriteComponent, DetailsComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent, FavoriteComponent, DetailsComponent, FooterComponent],
   imports: [
     BrowserModule,
     FormsModule,

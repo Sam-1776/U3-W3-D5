@@ -1,9 +1,12 @@
 <div class="text-bg-dark">
     <div class="container d-flex flex-column align-items-center justify-content-center" id="centrale">
-        <h1 class="text-center display-5">Benvenuto, per usuffruire del contenuto <br> Accedi o Registrati </h1>
+        <h1 class="text-center display-5">Benvenuto, per usuffruire del contenuto</h1>
         <div>
-            <button class="btn btn-outline-light me-2" [routerLink]="['/login']" routerLinkActive="active">Login</button>
-            <button class="btn btn-outline-light" [routerLink]="['/register']" routerLinkActive="active">Sign up</button>
+            <h2 class="display-5">Accedi o Registrati</h2>
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-outline-light me-2" [routerLink]="['/login']" routerLinkActive="active">Login</button>
+                <button class="btn btn-outline-light" [routerLink]="['/register']" routerLinkActive="active">Sign up</button>
+            </div>
         </div>
     </div>
 </div>
