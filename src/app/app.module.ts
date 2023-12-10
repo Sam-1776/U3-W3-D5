@@ -14,6 +14,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'details/:id',
+    component: DetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -50,7 +56,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent, FavoriteComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NavComponent, MoviesComponent, ProfileComponent, FavoriteComponent, DetailsComponent],
   imports: [
     BrowserModule,
     FormsModule,

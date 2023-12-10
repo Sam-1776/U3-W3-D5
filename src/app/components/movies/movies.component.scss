@@ -1,23 +1,58 @@
-.card{
-    position: relative;
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    #btnF {
+      bottom: 20px;
+      transition: all 600ms;
+    }
+  }
 }
-button{
+#btnF {
+  position: absolute;
+  bottom: -50px;
+  font-size: 1.8rem;
+  left: 10px;
+  i{
+    filter: drop-shadow(4px 4px 8px black);
+  }
+}
+.btn-outline-danger {
+  border: none;
+  &:hover {
+    background-color: transparent;
+  }
+}
+.btn-outline-light {
+  border: none;
+  &:hover {
+    background-color: transparent;
+    color: red;
+  }
+}
+
+#tip {
+  background-image: linear-gradient(to bottom, transparent 60%, #00000052);
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+  }
+  #data {
     position: absolute;
-    bottom: 20px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    left: 10px;
-}
-.btn-outline-danger{
-    border: none;
-    &:hover{
-        background-color: transparent;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+
+    #btnR {
+      font-size: 1.8rem;
     }
-}
-.btn-outline-light{
-    border: none;
-    &:hover{
-        background-color: transparent;
-        color: red;
+    p {
+      margin: 0;
     }
+  }
 }

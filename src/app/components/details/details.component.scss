@@ -1,0 +1,15 @@
+.card{
+    position: relative;
+    background-image: linear-gradient(to bottom, transparent 60%, #00000052);
+    #info{
+        position: absolute;
+        bottom: 20px;
+        width: 65%;
+    }
+    #like{
+        width: 200px;
+        .progress{
+            width: 100px;
+        }
+    }
+}

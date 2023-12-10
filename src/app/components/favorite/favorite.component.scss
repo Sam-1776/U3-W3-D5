@@ -1,16 +1,27 @@
-.card{
-    position: relative;
-}
-button{
-    position: absolute;
-    bottom: 20px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    left: 10px;
-}
-.btn-outline-danger{
-    border: none;
-    &:hover{
-        background-color: transparent;
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    button {
+      bottom: 20px;
+      transition: all 600ms;
     }
+  }
+}
+button {
+  position: absolute;
+  bottom: -50px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  left: 10px;
+  i {
+    filter: drop-shadow(4px 4px 8px black);
+  }
+}
+.btn-outline-danger {
+  border: none;
+  &:hover {
+    background-color: transparent;
+  }
 }

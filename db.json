@@ -23,31 +23,6 @@
       "userId": 2,
       "movieId": 632357,
       "id": 8
-    },
-    {
-      "userId": 3,
-      "movieId": 632357,
-      "id": 9
-    },
-    {
-      "userId": 3,
-      "movieId": 615457,
-      "id": 10
-    },
-    {
-      "userId": 3,
-      "movieId": 717192,
-      "id": 11
-    },
-    {
-      "userId": 3,
-      "movieId": 791373,
-      "id": 12
-    },
-    {
-      "userId": 3,
-      "movieId": 811367,
-      "id": 13
     }
   ],
   "movies-popular": [
